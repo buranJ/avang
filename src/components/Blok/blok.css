@@ -1,13 +1,17 @@
 /* ─── Global wrapper ─────────────────────────────────── */
 .blok-wrapper {
-    max-width: 1128px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 40px;
     font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f5f5f5;
+    box-sizing: border-box;
 }
 
 /* ─── Section shell ──────────────────────────────────── */
 .section {
-    padding: 48px 0;
+    padding: 48px 40px;
 }
 
 /* ─── Section header (title + arrow) ────────────────── */
@@ -53,32 +57,33 @@
 
 .objects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 350px);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-/* ── Карточка: Premium Luxury, 350px, border-radius 36px ── */
+/* ── Карточка ── */
 .obj-card {
-    width: 350px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
     padding: 20px 20px 42px;
-    border-radius: 36px;
+    border-radius: 30px;
     background: #ffffff;
     cursor: pointer;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
     overflow: visible;
     position: relative;
     transition: box-shadow 0.3s, transform 0.3s;
+    box-sizing: border-box;
 }
 
 .obj-card:hover {
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.16);
+    z-index: 10;
 }
 
-/* ── Обёртка: clip-path обрезает низ, пропускает верх на hover ── */
 .image-wrapper {
     width: 100%;
     flex-shrink: 0;
@@ -86,59 +91,30 @@
     cursor: pointer;
     clip-path: inset(0 0 0 0 round 24px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    transition:
-        clip-path 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-        box-shadow 0.6s ease;
+    transition: clip-path 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.6s ease;
 }
 
-/* на hover: разрешаем выход на 60px вверх, низ остаётся закрытым */
 .image-wrapper:hover {
     clip-path: inset(-60px 0 0 0 round 0 0 24px 24px);
     box-shadow: 0 28px 55px rgba(0, 0, 0, 0.24);
 }
 
-/* ── Изображение: поднимается вверх, выходя за рамку ── */
 .card-image {
     display: block;
     width: 100%;
     height: 230px;
     object-fit: cover;
     object-position: center top;
-    -webkit-mask-image: linear-gradient(to bottom, black 100%, black 100%);
-    mask-image: linear-gradient(to bottom, black 100%, black 100%);
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-    transition:
-        transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-        filter 0.6s ease,
-        -webkit-mask-image 0.6s ease,
-        mask-image 0.6s ease;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.6s ease;
 }
 
-/* при hover: верх изображения (небо/фон) уходит в прозрачность */
 .card-image:hover {
     transform: translateY(-45px) scale(1.03);
     filter: brightness(1.07);
-    -webkit-mask-image: linear-gradient(to bottom,
-            transparent 0%,
-            rgba(0, 0, 0, 0.2) 12%,
-            black 30%,
-            black 100%);
-    mask-image: linear-gradient(to bottom,
-            transparent 0%,
-            rgba(0, 0, 0, 0.2) 12%,
-            black 30%,
-            black 100%);
 }
 
-/* карточка поднимается на передний план при hover */
-.obj-card:hover {
-    z-index: 10;
-}
-
-/* ── Название проекта ── */
 .obj-name {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     color: #020B24;
     margin: 0;
@@ -147,7 +123,14 @@
     letter-spacing: -0.3px;
 }
 
-/* ── Кнопка: выходит за нижний край карточки ── */
+.obj-card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
 .obj-btn {
     position: absolute;
     bottom: -22px;
@@ -175,8 +158,8 @@
 /* ─── News section ───────────────────────────────────── */
 .news-section {
     background: #0f1127;
-    border-radius: 28px;
-    padding: 48px 40px 56px;
+    padding: 48px 80px 56px;
+    margin: 0 -40px;
 }
 
 .news-title {
@@ -194,16 +177,14 @@
     border-color: #fff;
 }
 
-/* ── Сетка карточек ── */
 .news-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-/* ── Карточка: белый фон, скруглённые углы ── */
 .news-card {
-    border-radius: 22px;
+    border-radius: 30px;
     overflow: hidden;
     background: #ffffff;
     cursor: pointer;
@@ -216,7 +197,6 @@
     transform: translateY(-4px);
 }
 
-/* ── Изображение (верхние 2/3 карточки) ── */
 .news-img-wrap {
     position: relative;
     width: 100%;
@@ -237,7 +217,6 @@
     transform: scale(1.04);
 }
 
-/* ── Логотип Avangard — верхний левый угол ── */
 .news-logo {
     position: absolute;
     top: 12px;
@@ -250,10 +229,8 @@
     padding: 5px 12px;
     border-radius: 8px;
     backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
 }
 
-/* ── Дата — верхний правый угол ── */
 .news-date {
     position: absolute;
     top: 12px;
@@ -265,10 +242,8 @@
     padding: 5px 10px;
     border-radius: 8px;
     backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
 }
 
-/* ── Нижняя часть изображения: градиент + категория + текст ── */
 .news-img-bottom {
     position: absolute;
     bottom: 0;
@@ -295,12 +270,10 @@
     line-height: 1.4;
     display: -webkit-box;
     -webkit-line-clamp: 2;
-    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-/* ── Текстовая область под фото (нижние 1/3) ── */
 .news-body {
     padding: 16px 16px 20px;
     background: #ffffff;
@@ -315,51 +288,117 @@
     line-height: 1.4;
 }
 
-/* ─── Mobile: horizontal scroll ─────────────────────── */
-@media (max-width: 1128px) {
-    .objects-grid {
-        grid-template-columns: repeat(3, 350px);
-        overflow-x: auto;
-        scrollbar-width: none;
-        padding-bottom: 8px;
+/* ─── Tablet (768px – 1024px) ───────────────────────── */
+@media (max-width: 1024px) {
+    .blok-wrapper {
+        padding: 0 24px;
     }
 
-    .objects-grid::-webkit-scrollbar {
-        display: none;
+    .obj-name {
+        font-size: 20px;
+    }
+
+    .obj-btn {
+        height: 48px;
+        font-size: 14px;
+        padding: 0 24px;
+    }
+
+    .card-image {
+        height: 180px;
     }
 }
 
-@media (max-width: 900px) {
-    .news-grid {
-        grid-template-columns: repeat(3, 300px);
-        overflow-x: auto;
-        scrollbar-width: none;
-        padding-bottom: 8px;
-    }
-
-    .news-grid::-webkit-scrollbar {
-        display: none;
-    }
-
+/* ─── Mobile (до 767px) ─────────────────────────────── */
+@media (max-width: 767px) {
     .blok-wrapper {
         padding: 0 16px;
     }
 
-    .news-section {
-        padding: 36px 20px;
+    .section {
+        padding: 32px 0;
     }
-}
 
-@media (max-width: 600px) {
     .section-title {
-        font-size: 22px;
+        font-size: 20px;
     }
 
+    /* Объекты — 1 колонка, горизонтальная карточка */
     .objects-grid {
-        grid-template-columns: repeat(3, 300px);
+        grid-template-columns: 1fr;
+        gap: 16px;
+        overflow-x: visible;
+        padding-bottom: 0;
     }
 
+    .objects-section {
+        padding-bottom: 32px;
+    }
+
+    .obj-card {
+        flex-direction: row;
+        align-items: center;
+        padding: 12px 16px 12px 12px;
+        border-radius: 20px;
+        gap: 12px;
+    }
+
+    .image-wrapper {
+        width: 120px;
+        height: 100px;
+        flex-shrink: 0;
+        clip-path: inset(0 0 0 0 round 14px);
+    }
+
+    .image-wrapper:hover {
+        clip-path: inset(0 0 0 0 round 14px);
+    }
+
+    .card-image {
+        width: 120px;
+        height: 100px;
+    }
+
+    .card-image:hover {
+        transform: none;
+    }
+
+    .obj-card__content {
+        align-items: flex-start;
+        gap: 8px;
+        flex: 1;
+    }
+
+    .obj-name {
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .obj-btn {
+        position: static;
+        transform: none;
+        bottom: auto;
+        left: auto;
+        height: 34px;
+        font-size: 13px;
+        padding: 0 16px;
+        box-shadow: none;
+    }
+
+    /* Новости — 1 колонка */
     .news-grid {
-        grid-template-columns: repeat(3, 260px);
+        grid-template-columns: 1fr;
+        gap: 16px;
+        overflow-x: visible;
+        padding-bottom: 0;
+    }
+
+    .news-section {
+        padding: 32px 20px 40px;
+        border-radius: 20px;
+    }
+
+    .news-img-wrap {
+        height: 180px;
     }
 }
