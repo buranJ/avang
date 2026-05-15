@@ -1,0 +1,23 @@
+.before-after {
+    padding: 0 18px 40px;
+    background: #eeeeee;
+}
+
+.before-after__title {
+    margin-bottom: 48px;
+    text-align: center;
+    color: #020b1a;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.before-after__slider {
+    max-width: 80%;
+    margin: 0 auto;
+    border-radius: 34px;
+    overflow: hidden;
+}
+
+.before-after__slider img {
+    object-fit: cover;
+}
