@@ -1,0 +1,113 @@
+.advantages {
+    width: 100%;
+    background: #f5f5f5;
+    padding: 60px 6%;
+    box-sizing: border-box;
+    font-family: 'Product Sans', sans-serif;
+}
+
+.advantages__title {
+    font-family: 'Product Sans', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 110%;
+    text-align: center;
+    color: #020b1a;
+    margin: 0 0 48px;
+}
+
+.advantages__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 20px;
+}
+
+.advantages__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.advantages__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.advantages__label {
+    font-family: 'Product Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #020b1a;
+    margin: 0;
+}
+
+/* ─── Tablet ───────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .advantages {
+        padding: 40px 24px;
+    }
+
+    .advantages__title {
+        font-size: 36px;
+        margin-bottom: 32px;
+    }
+
+    .advantages__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px 16px;
+    }
+}
+
+/* ─── Mobile ───────────────────────────────────────── */
+@media (max-width: 767px) {
+    .advantages {
+        padding: 32px 16px;
+    }
+
+    .advantages__title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .advantages__grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .advantages__item {
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        text-align: left;
+        border: 1.5px solid #020b1a;
+        border-radius: 100px;
+        padding: 8px 14px;
+        width: auto;
+    }
+
+    .advantages__icon {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+    }
+
+    .advantages__icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .advantages__label {
+        font-size: 13px;
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+}

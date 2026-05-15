@@ -45,13 +45,7 @@ export default function Blok() {
           <h2 className="section-title">Строящиеся объекты</h2>
           <button className="nav-arrow" aria-label="Все объекты">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M5 12h14M13 6l6 6-6 6"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
         </div>
@@ -62,8 +56,10 @@ export default function Blok() {
               <div className="image-wrapper">
                 <img src={obj.img} alt={obj.name} className="card-image" />
               </div>
-              <p className="obj-name">{obj.name}</p>
-              <button className="obj-btn">О проекте</button>
+              <div className="obj-card__content">
+                <p className="obj-name">{obj.name}</p>
+                <button className="obj-btn">О проекте</button>
+              </div>
             </article>
           ))}
         </div>
@@ -75,13 +71,7 @@ export default function Blok() {
           <h2 className="section-title news-title">Новости</h2>
           <button className="nav-arrow news-arrow" aria-label="Все новости">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M5 12h14M13 6l6 6-6 6"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
         </div>
