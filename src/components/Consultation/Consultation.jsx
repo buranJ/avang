@@ -2,7 +2,7 @@ import "./consultation.css";
 const Consultation = () => {
   return (
     <section className="consultation">
-      <div className="consultation__form-box container">
+      <div className="consultation__form-box">
         <h2 className="consultation__form-title">Получить Консультацию</h2>
 
         <form className="consultation__form">

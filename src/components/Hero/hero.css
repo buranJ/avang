@@ -18,7 +18,7 @@
     transform: translateX(-50%);
     bottom: 0;
 
-    width: 84%;
+    width: 88%;
     height: 38%;
 
     background: rgba(0, 9, 27, 0.55);
@@ -43,7 +43,7 @@
     align-items: center;
     gap: 12px;
     text-align: center;
-    
+
 }
 
 .hero__stat-number {
@@ -60,9 +60,84 @@
 .hero__stat-label {
     font-family: 'Product Sans', sans-serif;
     font-weight: 500;
-    font-size: clamp(13px, 1.2vw, 22px);
+    font-size: 25px;
     line-height: 130%;
     color: #ffffff;
     text-align: center;
 }
 
+/* ── Tablet (768px – 1024px) ── */
+@media (max-width: 1024px) {
+    .hero__stats {
+        width: 90%;
+        height: 32%;
+        padding: 0 40px;
+        gap: 20px;
+    }
+
+    .hero__stat-number {
+        font-size: clamp(24px, 4vw, 52px);
+    }
+
+    .hero__stat-label {
+        font-size: clamp(12px, 1.5vw, 18px);
+    }
+}
+
+/* ── Mobile (до 767px) ── */
+@media (max-width: 767px) {
+    .hero__stats {
+        width: 100%;
+        height: auto;
+        padding: 24px 20px 28px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        justify-content: flex-start;
+    }
+
+    /* SINCE 1998 — первая строка на всю ширину */
+    .hero__stat:first-child {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        margin-bottom: 16px;
+    }
+
+    .hero__stat:first-child .hero__stat-number {
+        font-size: clamp(32px, 9vw, 52px);
+    }
+
+    /* >700 и >155 — вторая строка рядом */
+    .hero__stat:not(:first-child) {
+        flex: 1;
+        width: 50%;
+    }
+
+    /* Вторая строка — два стата рядом */
+    .hero__stats {
+        flex-wrap: wrap;
+    }
+
+    .hero__stat:nth-child(2),
+    .hero__stat:nth-child(3) {
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        padding-top: 0;
+    }
+
+    .hero__stat-number {
+        font-size: clamp(24px, 7vw, 40px);
+        white-space: nowrap;
+    }
+
+    .hero__stat-label {
+        font-size: 13px;
+        line-height: 130%;
+    }
+}
