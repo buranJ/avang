@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+// import Home from "./pages/Home/Home";
+import Object from "./pages/Object/Object";
+import Media from "./pages/Media/Media";
 import Home from "./pages/Home/Home";
 import Object from "./pages/Object/Object";
 import ForeverPage from "./pages/Forever/ForeverPage";
@@ -14,6 +17,9 @@ function App() {
         <Route path="/forever" element={<ForeverPage />} />
         <Route path="/objects" element={<AllObjects />} />
       </Routes>
+        {/* <Home /> */}
+      <Object />
+      <Media />
     </BrowserRouter>
   );
 }

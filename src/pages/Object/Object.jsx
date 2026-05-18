@@ -1,5 +1,7 @@
 import AboutComplex from "../../components/Aboutcomplex/Aboutcomplex";
 import Advantages from "../../components/Advantages/Advantages";
+import Architecture from "../../components/Architecture/Architecture";
+import Layoutplans from "../../components/Layoutplans/Layoutplans";
 import BeforeAfter from "../../components/BeforeAfter/BeforeAfter";
 import Edit from "../../components/edit/edit";
 import Footer from "../../components/Footer/Footer";
@@ -14,6 +16,8 @@ function Object() {
       <InNumbers />
       <BeforeAfter />
       <ParkingLayout/>
+      <Architecture />
+      <Layoutplans />
       <Advantages />
       <Edit />
       <Location />

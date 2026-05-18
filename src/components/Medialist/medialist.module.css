@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap');
+
+.section {
+  background-color: #efefef;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 80px 76px;
+  font-family: "Google Sans", "Segoe UI", sans-serif;
+  box-sizing: border-box;
+}
+
+.heading {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  color: rgba(0, 9, 27, 1);
+  margin: 0 0 48px;
+  line-height: 1.2;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 48px 48px;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.25s, background 0.25s;
+  cursor: pointer;
+}
+
+.card:hover,
+.cardHovered {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+
+.logoWrapper {
+  width: 140px;
+  min-width: 140px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  max-width: 140px;
+  max-height: 80px;
+  object-fit: contain;
+  display: block;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.date {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 9, 27, 0.45);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(0, 9, 27, 1);
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 48px 24px;
+  }
+
+  .heading {
+    font-size: 26px;
+    margin-bottom: 32px;
+  }
+
+  .card {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .logoWrapper {
+    width: 100px;
+    min-width: 100px;
+    height: 60px;
+  }
+
+  .logo {
+    max-width: 100px;
+    max-height: 60px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+}
