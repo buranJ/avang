@@ -1,11 +1,8 @@
-
-
 import "./EtapyStroiki.css";
 
-// ✅ ВСТАВЬ СЮДА СВОЮ ССЫЛКУ
 const LINK_URL = "https://live.avangardstyle.kg/";
 
-export default function StageCard() {
+export default function EtapyStroiki() {
   return (
     <div className="stage-card">
       <h2 className="stage-card__title">Этапы строительства</h2>

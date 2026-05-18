@@ -10,6 +10,7 @@ import Location from "../../components/Location/Location";
 import ParkingLayout from "../../components/ParkingLayout/ParkingLayout";
 import Nearby from "../../components/Nearby/Nearby";
 import View from "../../components/View/View";
+import Panoramapark from "../../components/Panoramapark/Panoramapark";
 
 function Object() {
   return (
@@ -27,7 +28,6 @@ function Object() {
       <Location />
       <Nearby />
       <Panoramapark />
-      <EtapyStroiki />
       <Footer />
     </div>
   );

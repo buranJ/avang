@@ -41,6 +41,7 @@
     background: transparent;
     color: #1a1a2e;
     cursor: pointer;
+    text-decoration: none;
     transition: background 0.2s, color 0.2s;
 }
 
