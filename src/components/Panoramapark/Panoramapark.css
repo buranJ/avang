@@ -1,0 +1,146 @@
+.pp-wrapper {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0d1b3e;
+  box-shadow: 0 10px 48px rgba(0, 0, 0, 0.3);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Логотип */
+.pp-logo {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(10, 25, 80, 0.72);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  padding: 8px 14px;
+}
+
+.pp-logo-icon {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  width: 28px;
+  height: 28px;
+}
+
+.pp-logo-square {
+  border-radius: 2px;
+}
+.pp-logo-square.tl { background: rgba(255, 255, 255, 0.95); }
+.pp-logo-square.tr { background: rgba(255, 255, 255, 0.55); }
+.pp-logo-square.bl { background: rgba(255, 255, 255, 0.55); }
+.pp-logo-square.br { background: rgba(255, 255, 255, 0.95); }
+
+.pp-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  gap: 0;
+}
+
+.pp-logo-text span {
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+
+/* Видео контейнер */
+.pp-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.pp-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Превью */
+.pp-preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pp-thumbnail {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pp-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+  transition: background 0.2s ease;
+}
+
+.pp-preview:hover .pp-overlay {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+/* Кнопка Play */
+.pp-play-btn {
+  position: relative;
+  z-index: 10;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #FF0000;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 28px rgba(255, 0, 0, 0.55);
+}
+
+.pp-play-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 36px rgba(255, 0, 0, 0.7);
+}
+
+.pp-play-btn:active {
+  transform: scale(0.97);
+}
+
+/* Бейдж YouTube */
+.pp-yt-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(0, 0, 0, 0.62);
+  color: white;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+}
+

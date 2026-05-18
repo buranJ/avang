@@ -26,6 +26,8 @@ function Object() {
 
       <Location />
       <Nearby />
+      <Panoramapark />
+      <EtapyStroiki />
       <Footer />
     </div>
   );
