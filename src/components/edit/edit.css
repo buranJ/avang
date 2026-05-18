@@ -1,0 +1,119 @@
+.genplan-section {
+  padding: 48px 40px;
+  background: #f5f5f5;
+}
+
+.genplan-card {
+  border-radius: 16px;
+  padding: 24px;
+  background: #fff;
+}
+
+.genplan-title {
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+  color: #1a1a2e;
+  margin: 0 0 20px;
+  letter-spacing: -0.3px;
+}
+
+.genplan-map {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.genplan-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.genplan-choose {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.06em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+}
+
+.genplan-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #2cc4d8;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  line-height: 1;
+}
+
+.genplan-pin:hover {
+  background: #1aa8bc;
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.genplan-download-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #1a1a2e;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.genplan-download-btn:hover {
+  background: #fff;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 768px) {
+  .genplan-section {
+    padding: 32px 16px;
+  }
+
+  .genplan-title {
+    font-size: 20px;
+  }
+
+  .genplan-pin {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+
+  .genplan-download-btn {
+    font-size: 13px;
+    padding: 9px 16px;
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .genplan-choose {
+    font-size: 13px;
+  }
+}

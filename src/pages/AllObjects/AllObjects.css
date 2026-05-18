@@ -1,0 +1,344 @@
+/* ══════════════════════════════════
+   ALL OBJECTS PAGE
+   ══════════════════════════════════ */
+
+.ao-page {
+    min-height: 100vh;
+    background: #f5f5f5;
+    font-family: 'Product Sans', 'Segoe UI', sans-serif;
+}
+
+/* ── Hero bar ── */
+.ao-hero {
+    background: linear-gradient(135deg, #020b1a 0%, #0f1f3d 60%, #1a2a5e 100%);
+    padding: 120px 80px 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ao-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: #f5f5f5;
+    clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+.ao-hero__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.ao-hero__crumb {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 0 16px;
+    letter-spacing: 0.5px;
+}
+
+.ao-hero__crumb-link {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.ao-hero__crumb-link:hover {
+    color: #c9a84c;
+}
+
+.ao-hero__title {
+    font-family: 'Vetren', serif;
+    font-size: clamp(40px, 6vw, 80px);
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0 0 12px;
+    letter-spacing: -1px;
+}
+
+.ao-hero__sub {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0;
+}
+
+/* ── Body ── */
+.ao-body {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 48px 40px 80px;
+}
+
+/* ── Filters ── */
+.ao-filters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.ao-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border-radius: 100px;
+    border: 2px solid #d0d0d0;
+    background: transparent;
+    font-family: 'Product Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ao-filter:hover {
+    border-color: #020b1a;
+    color: #020b1a;
+}
+
+.ao-filter--active {
+    background: #020b1a;
+    border-color: #020b1a;
+    color: #ffffff;
+}
+
+.ao-filter__count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0 6px;
+}
+
+.ao-filter--active .ao-filter__count {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.ao-filter:not(.ao-filter--active) .ao-filter__count {
+    background: #e0e0e0;
+    color: #333;
+}
+
+/* ── Grid ── */
+.ao-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* ── Card ── */
+.ao-card {
+    background: #ffffff;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.ao-card:hover {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+/* Image */
+.ao-card__img-wrap {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.ao-card__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.ao-card:hover .ao-card__img {
+    transform: scale(1.05);
+}
+
+/* Status badge */
+.ao-card__status {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+}
+
+.ao-card__status--building {
+    background: #fff3cd;
+    color: #7a5a00;
+}
+
+.ao-card__status--done {
+    background: #d4edda;
+    color: #155724;
+}
+
+/* Featured badge */
+.ao-card__featured {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+    background: #c9a84c;
+    color: #fff;
+}
+
+/* Body */
+.ao-card__body {
+    padding: 22px 24px 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.ao-card__type {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #999;
+    margin: 0 0 8px;
+}
+
+.ao-card__name {
+    font-family: 'Vetren', serif;
+    font-size: clamp(20px, 2vw, 26px);
+    font-weight: 400;
+    color: #020b1a;
+    margin: 0 0 20px;
+    line-height: 1.15;
+}
+
+/* Specs row */
+.ao-card__specs {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.ao-card__spec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.ao-card__spec-val {
+    font-size: 20px;
+    font-weight: 700;
+    color: #020b1a;
+    line-height: 1;
+}
+
+.ao-card__spec-key {
+    font-size: 11px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ao-card__spec-sep {
+    width: 1px;
+    height: 32px;
+    background: #e0e0e0;
+    flex-shrink: 0;
+}
+
+/* CTA */
+.ao-card__btn {
+    display: inline-block;
+    margin-top: auto;
+    padding: 13px 32px;
+    background: #020b1a;
+    color: #fff;
+    font-family: 'Product Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s, box-shadow 0.2s;
+    align-self: flex-start;
+    box-shadow: 0 4px 16px rgba(2, 11, 36, 0.2);
+}
+
+.ao-card__btn:hover {
+    background: #003366;
+    box-shadow: 0 8px 24px rgba(2, 11, 36, 0.3);
+}
+
+/* ══ RESPONSIVE ══ */
+
+@media (max-width: 1100px) {
+    .ao-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ao-hero {
+        padding: 120px 40px 56px;
+    }
+}
+
+@media (max-width: 767px) {
+    .ao-hero {
+        padding: 100px 20px 52px;
+    }
+
+    .ao-hero__title {
+        font-size: clamp(32px, 9vw, 56px);
+    }
+
+    .ao-body {
+        padding: 32px 16px 60px;
+    }
+
+    .ao-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .ao-card__img-wrap {
+        height: 200px;
+    }
+
+    .ao-filters {
+        gap: 8px;
+    }
+
+    .ao-filter {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}

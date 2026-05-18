@@ -130,6 +130,12 @@
     background: #e0e0e0;
 }
 
+.dropdown__item--link {
+    text-decoration: none;
+    color: #111111;
+    font-weight: 600;
+}
+
 .dropdown__item--submenu svg {
     color: #888;
     flex-shrink: 0;

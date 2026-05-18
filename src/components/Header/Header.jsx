@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./header.css";
 
 const AvangardLogo = () => (
@@ -39,7 +40,7 @@ const navItems = [
             { label: "Москва" },
             { label: "Елисейские поля" },
             { label: "Динамика строительства" },
-            { label: "Все объекты" },
+            { label: "Все объекты", to: "/forever" },
         ],
     },
     { label: "Бизнес центр", hasDropdown: false },
@@ -92,13 +93,23 @@ export default function Header() {
                         {item.hasDropdown && activeItem === item.label && (
                             <div className="dropdown">
                                 {item.dropdown.map((d) => (
-                                    <div
-                                        key={d.label}
-                                        className={`dropdown__item${d.hasSubMenu ? " dropdown__item--submenu" : ""}`}
-                                    >
-                                        <span>{d.label}</span>
-                                        {d.hasSubMenu && <ChevronRight />}
-                                    </div>
+                                    d.to ? (
+                                        <Link
+                                            key={d.label}
+                                            to={d.to}
+                                            className="dropdown__item dropdown__item--link"
+                                        >
+                                            <span>{d.label}</span>
+                                        </Link>
+                                    ) : (
+                                        <div
+                                            key={d.label}
+                                            className={`dropdown__item${d.hasSubMenu ? " dropdown__item--submenu" : ""}`}
+                                        >
+                                            <span>{d.label}</span>
+                                            {d.hasSubMenu && <ChevronRight />}
+                                        </div>
+                                    )
                                 ))}
                             </div>
                         )}
