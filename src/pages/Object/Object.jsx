@@ -15,11 +15,12 @@ function Object() {
       <AboutComplex />
       <InNumbers />
       <BeforeAfter />
-      <ParkingLayout/>
-      <Architecture />
       <Layoutplans />
-      <Advantages />
+      <ParkingLayout />
+      <Architecture />
       <Edit />
+      <Advantages />
+
       <Location />
       <Footer />
     </div>
