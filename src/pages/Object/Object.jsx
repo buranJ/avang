@@ -8,6 +8,8 @@ import Footer from "../../components/Footer/Footer";
 import InNumbers from "../../components/Innumbers/Innumbers";
 import Location from "../../components/Location/Location";
 import ParkingLayout from "../../components/ParkingLayout/ParkingLayout";
+import Nearby from "../../components/Nearby/Nearby";
+import View from "../../components/View/View";
 
 function Object() {
   return (
@@ -19,9 +21,11 @@ function Object() {
       <ParkingLayout />
       <Architecture />
       <Edit />
+      <View />
       <Advantages />
 
       <Location />
+      <Nearby />
       <Footer />
     </div>
   );

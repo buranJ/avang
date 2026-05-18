@@ -6,6 +6,7 @@ import Media from "./pages/Media/Media";
 import Home from "./pages/Home/Home";
 import ForeverPage from "./pages/Forever/ForeverPage";
 import AllObjects from "./pages/AllObjects/AllObjects";
+import Tech from "./pages/Tech/Tech"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/objects" element={<AllObjects />} />
       </Routes>
       {/* <Home /> */}
+       <Tech />
     </BrowserRouter>
   );
 }

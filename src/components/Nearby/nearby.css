@@ -1,0 +1,250 @@
+.nearby {
+    width: 100%;
+    background: #ffffff;
+    padding: calc(60 / 1280 * 100vw) calc(76 / 1280 * 100vw);
+    box-sizing: border-box;
+    font-family: 'Product Sans', sans-serif;
+}
+
+.nearby__title {
+    font-family: 'Product Sans', sans-serif;
+    font-weight: 700;
+    font-size: calc(48 / 1280 * 100vw);
+    line-height: 110%;
+    text-align: center;
+    color: #020b1a;
+    margin: 0 0 calc(40 / 1280 * 100vw);
+}
+
+.nearby__mobile {
+    display: none;
+}
+
+/* ── Список ── */
+.nearby__list {
+    display: grid;
+    grid-template-columns: repeat(3, calc(285 / 1128 * 100%));
+    gap: calc(1126 / 1280 * 100vw - 3 * calc(285 / 1280 * 100vw));
+    gap: calc((1128 - 3 * 285) / 2 / 1280 * 100vw);
+    justify-content: space-between;
+    align-items: start;
+}
+
+/* ── Элемент ── */
+.nearby__item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+}
+
+/* Пунктирная линия слева */
+.nearby__item::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 28px;
+    bottom: 0;
+    width: 2px;
+    background-image: repeating-linear-gradient(to bottom,
+            #00091b 0px,
+            #00091b 16px,
+            transparent 16px,
+            transparent 40px);
+    z-index: 0;
+}
+
+.nearby__item-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-height: 60px;
+}
+
+.nearby__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #020b1a;
+    flex-shrink: 0;
+    margin-top: 4px;
+    position: relative;
+    z-index: 1;
+}
+
+.nearby__name {
+    font-family: 'Product Sans', sans-serif;
+    font-weight: 500;
+    font-size: calc(20 / 1280 * 100vw);
+    line-height: 130%;
+    color: #020b1a;
+    margin: 0;
+}
+
+/* ── Изображение ── */
+.nearby__img-wrap {
+    position: relative;
+    width: calc(285 / 1280 * 100vw);
+    height: calc(285 / 1280 * 100vw);
+    border-radius: calc(20 / 1280 * 100vw);
+    overflow: hidden;
+    margin-left: 24px;
+}
+
+.nearby__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.nearby__badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-family: 'Product Sans', sans-serif;
+    font-size: calc(14 / 1280 * 100vw);
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+}
+
+/* ─── Tablet ───────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .nearby {
+        padding: 40px 24px;
+    }
+
+    .nearby__title {
+        font-size: 32px;
+        margin-bottom: 28px;
+    }
+
+    .nearby__name {
+        font-size: 16px;
+    }
+
+    .nearby__img-wrap {
+        width: 100%;
+        height: 220px;
+    }
+
+    .nearby__badge {
+        font-size: 13px;
+    }
+}
+
+/* ─── Mobile ───────────────────────────────────────── */
+@media (max-width: 767px) {
+    .nearby {
+        padding: 32px 0;
+    }
+
+    .nearby__title {
+        font-size: 20px;
+        margin-bottom: 24px;
+        padding: 0 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .nearby__list {
+        display: none;
+    }
+
+    .nearby__mobile {
+        display: block;
+        padding: 0 16px;
+    }
+
+    .nearby__mobile-inner {
+        position: relative;
+        min-height: 600px;
+    }
+
+    .nearby__snake {
+        position: absolute;
+        left: 4px;
+        top: 10px;
+        width: 90vw;
+        height: auto;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .nearby__mobile-items {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nearby__mobile-item {
+        width: 38vw;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 40px;
+    }
+
+    /* Нечётные — слева */
+    .nearby__mobile-item:nth-child(odd) {
+        align-self: flex-start;
+        margin-left: 0;
+    }
+
+    /* Чётные — справа */
+    .nearby__mobile-item--right {
+        align-self: flex-end;
+        margin-right: 0;
+    }
+
+    .nearby__mobile-item .nearby__name {
+        font-size: 13px;
+        line-height: 1.3;
+    }
+
+    .nearby__mobile-item .nearby__dot {
+        width: 12px;
+        height: 12px;
+        margin-top: 2px;
+    }
+
+    /* Первая точка */
+    .nearby__mobile-item:nth-child(1) .nearby__dot {
+        margin-top: 6px;
+        left: -2px;
+    }
+
+    /* Вторая точка */
+    .nearby__mobile-item:nth-child(2) .nearby__dot {
+        margin-top: -6px;
+        right: -34.5vw;
+    }
+
+    /* Третья точка */
+    .nearby__mobile-item:nth-child(3) .nearby__dot {
+        margin-top: 6px;
+        left: -2px;
+    }
+
+    .nearby__img-wrap--square {
+        width: 38vw;
+        height: 38vw;
+        border-radius: 16px;
+        margin-left: 0;
+        flex-shrink: 0;
+    }
+
+    .nearby__badge {
+        font-size: 11px;
+        top: 8px;
+        right: 8px;
+        padding: 3px 10px;
+    }
+}
