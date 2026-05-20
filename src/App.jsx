@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import ObjectPage from "./pages/Object/Object";
 import ForeverPage from "./pages/Forever/ForeverPage";
@@ -9,6 +9,9 @@ import ConstructionProgress from "./pages/ConstructionProgress/ConstructionProgr
 import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
 import ProjectDetail from "./pages/ProjectDetail/Projectdetail";
 import Aboutus from "./pages/AboutUs/Aboutus";
+import MainLayout from "./layouts/MainLayout";
+import Contacts from "./pages/Contacts/Contacts";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -16,15 +19,19 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/object" element={<ObjectPage />} />
+        <Route path="/object/:slug" element={<ObjectPage />} />
         <Route path="/forever" element={<ForeverPage />} />
         <Route path="/objects" element={<AllObjects />} />
         <Route path="/news" element={<News />} />
-        <Route path="/news/:id" element={<NewsDetail />} />
+        <Route path="/news/:slug" element={<NewsDetail />} />
         <Route path="/construction-progress" element={<ConstructionProgress />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
         <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/projects/:id" element={<ProjectDetail />} />
+        <Route path="/projects/:slug" element={<ProjectDetail />} />
         <Route path="/about" element={<Aboutus />} />
+        <Route element={<MainLayout />}>
+          <Route path="/contacts" element={<Contacts />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

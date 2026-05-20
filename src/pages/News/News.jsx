@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
-import { NEWS_ITEMS } from "./newsData";
+import { getNewsList } from "../../api/newsApi";
+import { useAsyncData } from "../../hooks/useAsyncData";
 import "./News.css";
 
 export default function News() {
+  const { data: newsItems, error, loading } = useAsyncData(
+    (signal) => getNewsList({ signal }),
+    []
+  );
+
+  const hasNews = Array.isArray(newsItems) && newsItems.length > 0;
+
   return (
     <main className="news-page">
       <div className="news-page__shell">
@@ -16,15 +24,27 @@ export default function News() {
         </div>
 
         <section className="news-page__grid" aria-label="Список новостей">
-          {NEWS_ITEMS.map((item) => (
-            <Link className="news-page__card" key={item.id} to={`/news/${item.id}`}>
+          {loading && (
+            <p className="news-page__state">Загрузка новостей...</p>
+          )}
+
+          {!loading && error && (
+            <p className="news-page__state">Не удалось загрузить новости. Попробуйте обновить страницу.</p>
+          )}
+
+          {!loading && !error && !hasNews && (
+            <p className="news-page__state">Новостей пока нет.</p>
+          )}
+
+          {!loading && !error && hasNews && newsItems.map((item) => (
+            <Link className="news-page__card" key={item.slug} to={`/news/${item.slug}`}>
               <div className="news-page__image-wrap">
-                <img className="news-page__image" src={item.image} alt={item.title} />
+                <img className="news-page__image" src={item.mainImage} alt={item.title} />
                 <span className="news-page__brand">Avangard</span>
-                <span className="news-page__date">{item.date}</span>
+                {item.createdAt && <span className="news-page__date">{item.createdAt}</span>}
                 <div className="news-page__image-caption">
-                  <span>{item.label}</span>
-                  <small>{item.caption}</small>
+                  <span>{item.title}</span>
+                  <small>Новости компании</small>
                 </div>
               </div>
               <h2 className="news-page__card-title">{item.title}</h2>

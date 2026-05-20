@@ -54,7 +54,7 @@ const navItems = [
         ],
     },
     { label: "СМИ", hasDropdown: false },
-    { label: "Контакты", hasDropdown: false },
+    { label: "Контакты", hasDropdown: false, to: "/contacts" },
 ];
 
 export default function Header() {
@@ -86,7 +86,13 @@ export default function Header() {
                         onMouseEnter={() => setActiveItem(item.label)}
                         onMouseLeave={() => setActiveItem(null)}
                     >
-                        <span className="nav-item__label">{item.label}</span>
+                        {item.to ? (
+                            <Link to={item.to} className="nav-item__label nav-item__label--link">
+                                {item.label}
+                            </Link>
+                        ) : (
+                            <span className="nav-item__label">{item.label}</span>
+                        )}
                         {item.hasDropdown && (
                             <span className="nav-item__chevron">›</span>
                         )}
@@ -145,7 +151,17 @@ export default function Header() {
                                         : null
                                     }
                                 >
-                                    <span className="mobile-nav-item__label">{item.label}</span>
+                                    {item.to ? (
+                                        <Link
+                                            to={item.to}
+                                            className="mobile-nav-item__label mobile-nav-item__label--link"
+                                            onClick={() => setMobileOpen(false)}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    ) : (
+                                        <span className="mobile-nav-item__label">{item.label}</span>
+                                    )}
                                     {item.hasDropdown && (
                                         <ChevronRight />
                                     )}
@@ -153,9 +169,20 @@ export default function Header() {
                                 {item.hasDropdown && mobileExpanded === item.label && (
                                     <div className="mobile-nav-item__dropdown">
                                         {item.dropdown.map((d) => (
-                                            <div key={d.label} className="mobile-nav-item__sub">
-                                                {d.label}
-                                            </div>
+                                            d.to ? (
+                                                <Link
+                                                    key={d.label}
+                                                    to={d.to}
+                                                    className="mobile-nav-item__sub mobile-nav-item__sub--link"
+                                                    onClick={() => setMobileOpen(false)}
+                                                >
+                                                    {d.label}
+                                                </Link>
+                                            ) : (
+                                                <div key={d.label} className="mobile-nav-item__sub">
+                                                    {d.label}
+                                                </div>
+                                            )
                                         ))}
                                     </div>
                                 )}

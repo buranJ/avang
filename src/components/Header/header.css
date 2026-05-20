@@ -76,6 +76,10 @@
     user-select: none;
 }
 
+.nav-item__label--link {
+    text-decoration: none;
+}
+
 .nav-item:hover .nav-item__label,
 .nav-item--active .nav-item__label {
     color: #ffffff;
@@ -245,6 +249,10 @@
     color: #ffffff;
 }
 
+.mobile-nav-item__label--link {
+    text-decoration: none;
+}
+
 .mobile-nav-item__row svg {
     color: rgba(255, 255, 255, 0.5);
 }
@@ -254,12 +262,17 @@
 }
 
 .mobile-nav-item__sub {
+    display: block;
     padding: 12px 40px;
     font-family: 'Product Sans', sans-serif;
     font-size: 15px;
     color: rgba(255, 255, 255, 0.75);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     cursor: pointer;
+}
+
+.mobile-nav-item__sub--link {
+    text-decoration: none;
 }
 
 .mobile-nav-item__sub:hover {
