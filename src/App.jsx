@@ -7,6 +7,8 @@ import ForeverPage from "./pages/Forever/ForeverPage";
 import AllObjects from "./pages/AllObjects/AllObjects";
 import News from "./pages/News/News";
 import NewsDetail from "./pages/News/NewsDetail";
+import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
+import ProjectDetail from "./pages/ProjectDetail/Projectdetail";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/objects" element={<AllObjects />} />
         <Route path="/news" element={<News />} />
         <Route path="/news/:id" element={<NewsDetail />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/projects/:id" element={<ProjectDetail />} />
       </Routes>
       {/* <Home /> */}
     </BrowserRouter>
