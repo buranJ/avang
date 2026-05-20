@@ -1,0 +1,199 @@
+/* ── Page wrapper ── */
+.cp-page {
+    min-height: 100vh;
+    background: #f5f6f8;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Hero / Title section ── */
+.cp-hero {
+    background: #fff;
+    text-align: center;
+    padding: 52px 24px 44px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.cp-hero__title {
+    margin: 0 0 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: #111111;
+    letter-spacing: -0.3px;
+    line-height: 1.15;
+}
+
+.cp-hero__sub {
+    margin: 0 auto;
+    max-width: 700px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #444444;
+    line-height: 1.6;
+}
+
+/* ── Body ── */
+.cp-body {
+    flex: 1;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 48px 32px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+/* ── Project section ── */
+.cp-project__name {
+    margin: 0 0 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: #111111;
+    letter-spacing: -0.3px;
+}
+
+/* ── Month filter tabs ── */
+.cp-months {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.cp-month {
+    padding: 10px 22px;
+    border-radius: 50px;
+    border: 1.5px solid #d1d5db;
+    background: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    white-space: nowrap;
+}
+
+.cp-month:hover {
+    border-color: #1a3a6b;
+    color: #1a3a6b;
+}
+
+.cp-month--active {
+    background: #1a3a6b;
+    border-color: #1a3a6b;
+    color: #fff;
+}
+
+.cp-month--active:hover {
+    background: #15305a;
+    border-color: #15305a;
+    color: #fff;
+}
+
+/* ── Photo grid ── */
+.cp-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.cp-photo {
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: #e5e7eb;
+}
+
+.cp-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.cp-photo:hover img {
+    transform: scale(1.04);
+}
+
+/* ── Responsive: tablet ── */
+@media (max-width: 1024px) {
+    .cp-body {
+        padding: 36px 24px 48px;
+        gap: 48px;
+    }
+
+    .cp-hero__title {
+        font-size: 30px;
+    }
+
+    .cp-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+}
+
+/* ── Responsive: mobile ── */
+@media (max-width: 700px) {
+    .cp-hero {
+        padding: 36px 20px 32px;
+    }
+
+    .cp-hero__title {
+        font-size: 24px;
+    }
+
+    .cp-hero__sub {
+        font-size: 14px;
+    }
+
+    .cp-body {
+        padding: 28px 16px 40px;
+        gap: 40px;
+    }
+
+    .cp-project__name {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+
+    .cp-months {
+        gap: 8px;
+        margin-bottom: 18px;
+        /* horizontal scroll on very small screens */
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 4px;
+    }
+
+    .cp-months::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cp-month {
+        padding: 8px 16px;
+        font-size: 13px;
+        flex-shrink: 0;
+    }
+
+    .cp-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .cp-photo {
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .cp-grid {
+        grid-template-columns: 1fr;
+    }
+}

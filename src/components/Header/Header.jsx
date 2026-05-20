@@ -39,7 +39,7 @@ const navItems = [
             { label: "Москва сити" },
             { label: "Москва" },
             { label: "Елисейские поля" },
-            { label: "Динамика строительства" },
+            { label: "Динамика строительства", to: "/construction-progress" },
             { label: "Все объекты", to: "/forever" },
         ],
     },
