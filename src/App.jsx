@@ -8,6 +8,7 @@ import NewsDetail from "./pages/News/NewsDetail";
 import ConstructionProgress from "./pages/ConstructionProgress/ConstructionProgress";
 import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
 import ProjectDetail from "./pages/ProjectDetail/Projectdetail";
+import Aboutus from "./pages/AboutUs/Aboutus";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:id" element={<ProjectDetail />} />
+        <Route path="/about" element={<Aboutus />} />
       </Routes>
     </BrowserRouter>
   );
