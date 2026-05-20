@@ -6,6 +6,8 @@ import AllObjects from "./pages/AllObjects/AllObjects";
 import News from "./pages/News/News";
 import NewsDetail from "./pages/News/NewsDetail";
 import ConstructionProgress from "./pages/ConstructionProgress/ConstructionProgress";
+import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
+import ProjectDetail from "./pages/ProjectDetail/Projectdetail";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/news/:id" element={<NewsDetail />} />
         <Route path="/construction-progress" element={<ConstructionProgress />} />
         <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/projects/:id" element={<ProjectDetail />} />
       </Routes>
     </BrowserRouter>
   );
